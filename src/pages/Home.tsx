@@ -6,16 +6,19 @@ const { Text } = Typography;
 
 const Home = () => {
   return (
-    <div className="text-center">
+    <div className="text-center mt-[10vh]">
       <Text className="text-center text-primary text-6xl font-extrabold font-mono">
         &#123; AI Histor Teller &#125;
       </Text>
       <div className="my-20 px-[20vw]">
         <Text className=" text-wrap text-2xl font-mono font-medium text-primary">
-          Là công cụ hiệu quả giúp bạn dễ dàng hiểu và ghi nhớ câu chuyện lịch
-          sử hào hùng của dân tộc Việt Nam. Hứa hẹn sẽ là công cụ gắn liền với
-          học sinh Việt Nam trên hành trình khám phá, chinh phục và
-          ươm mầm tình yêu, niềm tự hào lịch sử dân tộc
+          Là công cụ hiệu quả giúp bạn dễ dàng hiểu và ghi nhớ những câu chuyện
+          lịch sử hào hùng của dân tộc Việt Nam.{" "}
+          <b>
+            Sứ mệnh là công cụ gắn liền với học sinh Việt Nam trên hành trình
+            khám phá, chinh phục và ươm mầm tình yêu, niềm tự hào lịch sử dân
+            tộc
+          </b>
         </Text>
       </div>
       <div className="w-full flex justify-center gap-6">
