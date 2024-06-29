@@ -18,7 +18,7 @@ const items: MenuItem[] = [
   {
     label: "Lịch sử",
     key: "2",
-    path: "/stories",
+    path: "/pick-stories",
   },
   {
     label: "Cộng đồng",
