@@ -2,9 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import MainLayout from "./layouts/MainLayout";
-import VideoList from "./pages/VideoList";
+import PickStory from "./pages/PickStory";
 import PersonalizedInformation from "./pages/PersonalizedInformation";
-import GenerateStory from "./pages/GenerateStory";
 import HistoryTeller from "./pages/HistoryTeller";
 import { useEffect, useState } from "react";
 
@@ -30,9 +29,7 @@ function App() {
       {isAuthorized ? (
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="stories" element={<VideoList />} />
-          <Route path="stories/:id" element={<VideoList />} />
-          <Route path="generate-story" element={<GenerateStory />} />
+          <Route path="pick-stories" element={<PickStory />} />
           <Route path="history-teller/:id" element={<HistoryTeller />} />
         </Route>
       ) : (
