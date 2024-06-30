@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import { Button, Col, Input, Row, Typography } from "antd";
-import VideoListItem from "../components/VideoListItem";
+import React from "react";
+import { Button, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { HISTORICAL_EVENT } from "../constants/historicalEvents";
 import { HistoricalEventItem } from "../components/generateStory/HistoricalEventItem";
 import { HistoricalEvent } from "../type";
-
-const { Search } = Input;
-const { Text } = Typography;
 
 const VideoList: React.FC = () => {
   // const [data, setData] = useState<unknown[]>([]);
@@ -53,7 +49,7 @@ const VideoList: React.FC = () => {
           type="primary"
           size="large"
           onClick={() => {
-            navigate("/generate-story");
+            navigate(`/history-teller/${selectedEvent?.eventName}`);
           }}
           disabled={!selectedEvent}
           className="py-2 h-auto rounded-none font-bold text-lg bg-primary"
