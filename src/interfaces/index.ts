@@ -1,30 +1,23 @@
-export interface IVideoListItem {
-  id: number;
-  title: string;
-  thumbnail: string;
-  authorName: string;
-  authorAva: string;
-  createdDate: number;
-  viewCount: number;
-  link: string;
-}
-
-export interface INation {
-  id: number;
-  name: string;
-}
-
-export interface IStoryContent {
-  text: string;
-  fpt_url: string;
-  duration: number;
-  end_time: number;
-  voice_url: string;
-  start_time: number;
-}
-
-export interface IStory {
-  title: string;
-  imgs: string[];
-  content: IStoryContent[];
+export interface IHistoryTeller {
+  content: {
+    text: string,
+    voice_url: string,
+    fpt_url: string,
+    img_url: string,
+    duration: number,
+    start_time: number,
+    end_time: number
+  }[],
+  imgs: string[],
+  questionaire: {
+    question: string,
+    options: string[],
+    answer: number
+  }[],
+  summary: {
+    context: string,
+    historical_significance: string,
+    main_happenings: string,
+    result: string
+  }
 }
