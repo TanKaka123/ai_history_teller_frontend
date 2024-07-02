@@ -7,7 +7,6 @@ const DISABLE_ROUTE = ["/personalized-information", "/history-teller"];
 const MainLayout: React.FC = () => {
   const history = useLocation();
   const isEnableLayout = React.useMemo(() => {
-    console.log(history.pathname);
     if (DISABLE_ROUTE.some((route) => history.pathname.includes(route)))
       return false;
     return true;
