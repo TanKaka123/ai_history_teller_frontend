@@ -103,7 +103,7 @@ export const HistoricalVideo = ({
             </button>
           </div>
         </div>
-        <div
+        {/* <div
           className="flex justify-between items-center gap-5 pt-3"
           style={{ paddingRight: "5vw", paddingLeft: "5vw" }}
         >
@@ -118,9 +118,9 @@ export const HistoricalVideo = ({
           <Text className="text-black text-xl">
             <b>Thời điểm sự kiện: </b> {historicalEvent.timePeriod}
           </Text>
-        </div>
+        </div> */}
         <div
-          className="flex justify-between items-center gap-5 pt-3"
+          className="flex justify-between items-center gap-5 pt-3 bg-background"
           style={{ paddingRight: "5vw", paddingLeft: "5vw" }}
         >
           <Text className="text-black text-xl">

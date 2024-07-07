@@ -66,21 +66,21 @@ export const PURPOSES_USE_APP: PurposeUseAppType[] = [
 
 export const TYPE_LISTENS: TypeListenType[] = [
   {
-    title: "Phong cách tường thuật",
+    title: "Tường thuật",
     description:
       "Phong cách tường thuật là cách kể chuyện chi tiết, khách quan, và trung thực. Nó tập trung vào việc cung cấp thông tin cụ thể, thường sử dụng giọng văn trung lập và chính xác để tái hiện lại sự kiện một cách rõ ràng và dễ hiểu.",
     image:
       "https://photo.znews.vn/w660/Uploaded/mdf_nsozxd/2019_03_30/6.jpg",
   },
   {
-    title: "Phong cách tiểu thuyết hóa",
+    title: "Tiểu thuyết hóa",
     description:
       "Phong cách tiểu thuyết hóa là phương pháp kể chuyện sinh động, lôi cuốn và đầy màu sắc. Nó thường sử dụng các yếu tố văn học như hình tượng, cốt truyện, và nhân vật để biến những sự kiện thực thành những câu chuyện hấp dẫn giống như trong tiểu thuyết.",
     image:
       "https://img-cdn.2game.vn/pictures/2game/2019/12/04/2game-tan-tam-quoc-chi-mobile-anh-hd-1.jpg",
   },
   {
-    title: "Phong cách hào hùng",
+    title: "Hào hùng",
     description:
       "Phong cách hào hùng là cách kể chuyện mạnh mẽ, tráng lệ và cảm động. Nó thường được sử dụng để tôn vinh những hành động anh hùng, sự kiện lịch sử quan trọng, hoặc các câu chuyện truyền cảm hứng, mang lại cảm giác phấn khích và tự hào cho người nghe.",
     image:

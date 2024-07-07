@@ -3,7 +3,7 @@ import AppHeader from "../components/AppHeader";
 import { Outlet, useLocation } from "react-router-dom";
 import AppFooter from "../components/AppFooter";
 
-const DISABLE_ROUTE = ["/personalized-information", "/history-teller"];
+const DISABLE_ROUTE = ["/personalized-information", "/history-teller", "/dynamic-history-teller"];
 const MainLayout: React.FC = () => {
   const history = useLocation();
   const isEnableLayout = React.useMemo(() => {
@@ -11,7 +11,7 @@ const MainLayout: React.FC = () => {
       return false;
     return true;
   }, [history]);
-  
+
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ const MainLayout: React.FC = () => {
       <div className="flex-1">
         <Outlet />
       </div>
-      {isEnableLayout ? <AppFooter /> : <></>}
+      {isEnableLayout && !['/prompt-story', '/pick-stories'].includes(history.pathname) ? <AppFooter /> : <></>}
     </div>
   );
 };

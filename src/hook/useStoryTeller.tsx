@@ -1,38 +1,41 @@
 import React from "react";
 import { IHistoryTeller } from "../interfaces";
-import { MOCK_DATA } from "../constants/mockData";
+import axios from "axios";
+
+const END_POINT = "http://18.141.185.208:8000/api/v1/story/create-story/";
 
 export const useStoryTeller = (eventName: string) => {
-  const [dataHistory, setDataHistory] = React.useState<IHistoryTeller>();
-  const personalizedInformation = JSON.parse(
-    localStorage.getItem("personalizedInformation") ?? "{}"
-  );
+  const [dataHistory, setDataHistory] = React.useState<IHistoryTeller | undefined>();
+  const [ isLoading, setIsLoading ] = React.useState<boolean>(false)
+
   React.useEffect(() => {
-    // Fetch data from API endpoint
-    fetch(process.env.REACT_APP_API_HISTORY_ENDPOINT, {
-      body: {
-        ...personalizedInformation,
-        eventName
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+    setIsLoading(true)
+    const timer = setTimeout(async () => {
+      const personalizedInformation = {
+        text_search: eventName,
+        ...JSON.parse(localStorage.getItem("personalizedInformation") ?? "{}"),
+      };
+
+      try {
+        const response = await axios.post(END_POINT, personalizedInformation);
+
+        if(response.data && !response.data.msg){
+            setDataHistory(response.data);
         }
-        return response.json();
-      })
-      .then((data) => {
-        // Assuming data is successfully fetched and parsed
-        setDataHistory(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        // Fallback to mock data if fetching fails
-        setDataHistory(MOCK_DATA);
-      });
-  }, []);
+     
+      } catch (error) {
+        console.error("Error:", error);
+      }
+      finally{
+        setIsLoading(false);
+      }
+    }, 8000);
+
+    return () => clearTimeout(timer);
+  }, [eventName]);
 
   return {
     dataHistory,
+    isLoading
   };
 };

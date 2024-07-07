@@ -33,9 +33,20 @@ const VideoList: React.FC = () => {
         Chọn câu chuyện
       </h1>
       <p className="text-center mt-5 text-lg">
-        Ở đây bạn sẽ xem được những câu chuyện được cộng đồng chia sẻ
+        Ở đây bạn có xem được những câu chuyện lịch sử vô cùng khác biệt
       </p>
+
       <Row align="middle" justify="center" className="gap-x-3 mt-10">
+        <Button
+          type="primary"
+          size="large"
+          onClick={() => {
+            navigate(`/prompt-story`);
+          }}
+          className="py-2 h-auto rounded-none font-bold text-lg bg-primary"
+        >
+          Mô tả câu chuyện
+        </Button>
         <div className="gap-0 flex">
           <input
             value={searchValue}
@@ -73,6 +84,11 @@ const VideoList: React.FC = () => {
             />
           ))}
         </div>
+      </div>
+      <div className="text-center mt-32  mb-20 text-2xl underline text-blue-800 cursor-pointer">
+        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeE2iA59BeJSYYVUYS3kV95iFGMcMtVQNVD-C8P0-H1IfCKAw/viewform">
+          Feedback về dự án AI History Teller để giúp chúng tôi phát triển hơn
+        </a>
       </div>
     </div>
   );

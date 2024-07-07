@@ -6,6 +6,9 @@ import PickStory from "./pages/PickStory";
 import PersonalizedInformation from "./pages/PersonalizedInformation";
 import HistoryTeller from "./pages/HistoryTeller";
 import { useEffect, useState } from "react";
+import PromptStory from "./pages/PromptStory";
+import DynamicStory from "./pages/DynamicStory";
+import Choose from "./pages/Choose";
 
 function App() {
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -30,7 +33,10 @@ function App() {
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="pick-stories" element={<PickStory />} />
+          <Route path="prompt-story" element={<PromptStory />} />
+          <Route path="choose" element={<Choose />} />
           <Route path="history-teller/:id" element={<HistoryTeller />} />
+          <Route path="dynamic-history-teller/:id" element={<DynamicStory />} />
         </Route>
       ) : (
         <Route path="*" element={<PersonalizedInformation />} />

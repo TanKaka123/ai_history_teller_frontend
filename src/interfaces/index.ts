@@ -8,6 +8,7 @@ export interface ISummary {
 export interface IQuestionaire {
   question: string,
   options: string[],
+  start_time: number,
   answer: number
 }
 
@@ -23,6 +24,7 @@ export interface IStoryContent {
 
 
 export interface IHistoryTeller {
+  title: string,
   content: IStoryContent[],
   imgs: string[],
   questionaire: IQuestionaire[],

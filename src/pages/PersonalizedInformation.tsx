@@ -29,14 +29,25 @@ export type TypeListenType = {
   image: string;
 };
 
+type personalizedInfo = {
+  object: string;
+  style: string;
+  purpose: string;
+};
+
 const PersonalizedInformation = React.memo(() => {
   const [step, setStep] = React.useState<number>(1);
-
+  const [personalizedInfo, setPersonalizedInfo] =
+    React.useState<personalizedInfo>({
+      object: "",
+      purpose: "",
+      style: "",
+    });
   const onContinue = () => {
     if (step < 3) {
       setStep((prevStep) => prevStep + 1);
     } else {
-      localStorage.setItem("personalizedInformation", "true");
+      localStorage.setItem("personalizedInformation", JSON.stringify(personalizedInfo));
       window.location.reload();
     }
   };
@@ -60,6 +71,12 @@ const PersonalizedInformation = React.memo(() => {
               lg={{ span: 6, offset: 1 }}
               className="my-2"
               key={typeUserIndex}
+              onClick={() =>
+                setPersonalizedInfo((prevState) => ({
+                  ...prevState,
+                  object: typeUser.title,
+                }))
+              }
             >
               <BoxPurposeUseApp purposeUserApp={typeUser} />
             </Col>
@@ -72,6 +89,12 @@ const PersonalizedInformation = React.memo(() => {
               lg={{ span: 6 }}
               className="my-2 flex justify-center"
               key={typeListenIndex}
+              onClick={() =>
+                setPersonalizedInfo((prevState) => ({
+                  ...prevState,
+                  style: typeListen.title,
+                }))
+              }
             >
               <BoxTypeListen typeListen={typeListen} />
             </Col>
@@ -84,6 +107,12 @@ const PersonalizedInformation = React.memo(() => {
               lg={{ span: 6, offset: 1 }}
               className="my-2"
               key={purposeUseAppIndex}
+              onClick={() =>
+                setPersonalizedInfo((prevState) => ({
+                  ...prevState,
+                  purpose: purposeUseApp.title,
+                }))
+              }
             >
               <BoxPurposeUseApp purposeUserApp={purposeUseApp} />
             </Col>
